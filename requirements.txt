@@ -1,0 +1,11 @@
+
+streamlit 
+pandas 
+plotly_express
+openpyxl
+Pillow
+altair
+requests
+streamlit-lottie
+plotly
+datetime
