@@ -300,15 +300,15 @@ if selected_menu == "BPH dengan Performa Kerja Terbaik":
 
 
     # Path folder foto
-    foto_folder = "C:/Users/user/Documents/ST03/Project/Dashboard_Project/Eksekutif Ormawa PKU 2023-2024/Work Performances Dashboard/FOTO STAFF DAN IKON/"
+    foto_folder = "/FOTO STAFF DAN IKON/"
 
     # Path folder nilai mutu
-    nilai_mutu_folder = "C:/Users/user/Documents/ST03/Project/Dashboard_Project/Eksekutif Ormawa PKU 2023-2024/Work Performances Dashboard/FOTO STAFF DAN IKON/"
+    nilai_mutu_folder = "/FOTO STAFF DAN IKON/"
 
     # Baca file CSV
 
     #df['C:/Users/user/Documents/ST03/Project/Dashboard_Project/Eksekutif Ormawa PKU 2023-2024/Work Performances Dashboard/Foto'] = 'Foto/' + df['Foto']
-    df = df.rename(columns={'C:/Users/user/Documents/ST03/Project/Dashboard_Project/Eksekutif Ormawa PKU 2023-2024/Work Performances Dashboard/FOTO STAFF DAN IKON': 'Path Foto'})
+    df = df.rename(columns={'/FOTO STAFF DAN IKON': 'Path Foto'})
     # Tambahkan prefix 'Foto/' pada nilai kolom 'Foto' dan simpan hasilnya pada kolom baru 'Path Foto'
     df['Path Foto'] = 'FOTO STAFF DAN IKON/' + df['Foto']
     # Hapus kolom 'Foto' karena sudah tidak diperlukan lagi
