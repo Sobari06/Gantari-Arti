@@ -315,8 +315,7 @@ df = CSV_Link_1 = pd.read_csv(f'https://docs.google.com/spreadsheets/d/{sheet_id
 print(dfC)
 
 # Tambahkan sidebar
-# Set judul halaman
-st.title("Aplikasi Streamlit dengan Sidebar")
+
 
 # Membuat sidebar
 with st.sidebar:
