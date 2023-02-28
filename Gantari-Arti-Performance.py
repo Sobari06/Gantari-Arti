@@ -315,9 +315,16 @@ df = CSV_Link_1 = pd.read_csv(f'https://docs.google.com/spreadsheets/d/{sheet_id
 print(dfC)
 
 # Tambahkan sidebar
-menu = ["BPH sebagai SC", "Biro dan Departemen","Pimpinan","TOP 11 Staff"]
-selected_menu = st.sidebar.selectbox("Best Performance", menu) 
-# Jika menu "BPH dengan Performa Kerja Terbaik" dipilih
+# Set judul halaman
+st.title("Aplikasi Streamlit dengan Sidebar")
+
+# Membuat sidebar
+with st.sidebar:
+    st.subheader("Menu Navigasi")
+    menu = ["BPH sebagai SC", "Biro dan Departemen","Pimpinan","TOP 11 Staff"]
+    selected_menu = st.sidebar.selectbox("Best Performance", menu) 
+    # Jika menu "BPH dengan Performa Kerja Terbaik" dipilih
+
 if selected_menu == "BPH sebagai SC":
 
     # Set judul halaman
