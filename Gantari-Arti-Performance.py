@@ -216,7 +216,7 @@ if len(df_filtered) > 0:
      # Distribution plot
     sns.kdeplot(data=df_filtered, x='Performa', hue='Biro dan Departemen', multiple='stack', ax=ax2)
     ax2.set_title(f'Sebaran Performa Kerja Seluruh Divisi ({selected_month})')
-    ax2.legend(loc='upper right')
+    ax2.legend(loc='upper right',title='Divisi')
     
     fig.tight_layout()
     st.pyplot(fig)
