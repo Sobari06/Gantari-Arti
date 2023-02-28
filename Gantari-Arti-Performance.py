@@ -39,7 +39,7 @@ with col2:
 
 
 st.markdown('------')
-st.write('Dengan mengetahui performa tiap staf secara statistik, akan membantu Ormawa Eksekutif PKU IPB, khususnya Biro Internal dalam memonitoring kinerja tiap pengurus. Pembaharuan dashboard ini dilakukan setiap 2 bulan sekali.')
+st.write('Dengan mengetahui performa tiap pengurus secara statistik, akan membantu Ormawa Eksekutif PKU IPB, khususnya Biro Internal dalam memonitoring kinerja tiap pengurus. Pembaharuan dashboard ini dilakukan setiap 2 bulan sekali.')
 st.markdown('------')
 st.subheader("Demografi Pengurus Kabinet Gantari Arti")
 
@@ -207,7 +207,7 @@ df_filtered = dfZ[dfZ['DATE_1'] == selected_month]
 if len(df_filtered) > 0:
     fig, ax = plt.subplots()
     sns.boxplot(x='Biro dan Departemen', y='Performa', data=df_filtered, ax=ax)
-    ax.set_title(f'Boxplot Performa Kerja Seluruh Divisi ({selected_month})')
+    ax.set_title(f'Boxplot Performa Kerja Seluruh Biro dan Departemen ({selected_month})')
     
     # Rotate x-labels for better visibility
     plt.xticks(rotation=45, ha='right')
