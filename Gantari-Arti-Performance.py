@@ -211,7 +211,14 @@ if len(df_filtered) > 0:
     
     # Rotate x-labels for better visibility
     plt.xticks(rotation=45, ha='right')
+    
+     # Distribution plot
+    sns.kdeplot(data=df_filtered, x='NILAI_1', hue='DIVISI_1', multiple='stack', ax=ax2)
+    ax2.set_title(f'Sebaran Performa Kerja Seluruh Divisi ({selected_month})')
+    ax2.legend(loc='upper right')
+    
     st.pyplot(fig)
+   
 
 
  #=============================== KINERJA Tiap BIRDEPT ===========================================
