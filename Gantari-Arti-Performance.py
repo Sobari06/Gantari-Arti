@@ -39,9 +39,9 @@ with col2:
 
 
 st.markdown('------')
-st.write('Dengan mengetahui performa tiap staf secara statistik, akan membantu Ormawa Eksekutif PKU IPB, khususnya Biro Internal dalam memonitoring kinerja tiap staf. Pembaharuan dashboard ini dilakukan setiap 2 bulan sekali.')
+st.write('Dengan mengetahui performa tiap staf secara statistik, akan membantu Ormawa Eksekutif PKU IPB, khususnya Biro Internal dalam memonitoring kinerja tiap pengurus. Pembaharuan dashboard ini dilakukan setiap 2 bulan sekali.')
 st.markdown('------')
-st.subheader("Demografi Staff")
+st.subheader("Demografi Pengurus Kabinet Gantari Arti")
 
 
 
@@ -199,7 +199,7 @@ dfZ = dfZ.sort_values('DATE_1')
 selected_month = st.selectbox("Pilih Bulan",dfZ['DATE_1'].unique())
 
 # Main content
-st.title('Performa Kerja Staff')
+st.title('Perbandingan Kinerja Antar Biro dan Departemen')
 st.write(f'Month: {selected_month}')
 
 # Create boxplot for all divisions
