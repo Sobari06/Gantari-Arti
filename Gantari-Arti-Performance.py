@@ -30,11 +30,11 @@ st_lottie(load_lottie_url(url))
 
 col1, col2= st.columns([2,1])
 with col1:
-            st.title(" Dashboard Performa Kerja Staff" )
+            st.title(" Dashboard Kinerja Pengurus" )
             st.subheader("Ormawa Eksekutif PKU IPB Kabinet Gantari Arti")   
 with col2:
         # Tampilkan informasi nilai mutu
-             st.image('RISBANG X INTERNAL.png', width=340)
+             st.image('RISBANG X INTERNAL.png', width=300)
 
 
 
