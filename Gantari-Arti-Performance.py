@@ -11,7 +11,9 @@ from streamlit_lottie import st_lottie
 import plotly.graph_objs as go
 import datetime
 import os
+import matplotlib.pyplot as plt
 import base64
+import seaborn as sns
 
 #Mendefinisikan fungsi untuk menampilkan animasi Lottie
 def load_lottie_url(url: str):
@@ -179,23 +181,35 @@ st.plotly_chart(create_chart(dfA), use_container_width=True)
 
 #=============================== PERBANDINGAN KINERJA ANTAR BIRDEPT ===========================================
 # Buat fungsi untuk membuat grafik
-def create_chart(dfB):
-    fig = go.Figure()
+
+#https://docs.google.com/spreadsheets/d/1SH7ctXNUN8TIs1_1rf_dhQnj9kx-iYltR43rbS09nIw/edit?usp=sharing
+sheet_id10 = '1SH7ctXNUN8TIs1_1rf_dhQnj9kx-iYltR43rbS09nIw'
+dfZ = pd.read_csv(f'https://docs.google.com/spreadsheets/d/{sheet_id10}/export?format=csv')
+
+print(dfZ)
+
+# Sort data by month column
+dfZ = dfZ.sort_values('DATE_1')
+
+# Sidebar for filters
+st.sidebar.header('Filter')
+selected_month = st.sidebar.selectbox('Select Month', dfZ['DATE_1'].unique())
+
+# Main content
+st.title('Performa Kerja Staff')
+st.write(f'Month: {selected_month}')
+
+# Create boxplot for all divisions
+df_filtered = dfZ[dfZ['DATE_1'] == selected_month]
+if len(df_filtered) > 0:
+    fig, ax = plt.subplots()
+    sns.boxplot(x='DIVISI_1', y='NILAI_1', data=df_filtered, ax=ax)
+    ax.set_title(f'Boxplot Performa Kerja Seluruh Divisi ({selected_month})')
     
-    for col in dfB.columns[1:]:
-        fig.add_trace(go.Scatter(x=dfB['DATE_1'], y=dfB[col], mode='lines', name=col))
-        
-    fig.update_layout(title='Perbandingan Performa Kerja Antar Birdept', xaxis_title='Bulan', yaxis_title='Performa')
-    return fig
+    # Rotate x-labels for better visibility
+    plt.xticks(rotation=45, ha='right')
+    st.pyplot(fig)
 
-# Buat aplikasi Streamlit
-st.title('Grafik Perbandingan Performa Kerja Antar Birdept')
-st.markdown('''
-            Grafik interaktif yang membandingkan performa kerja antar Birdept.
-            ''')
-
-# Tampilkan grafik
-st.plotly_chart(create_chart(dfB), use_container_width=True)
 
  #=============================== KINERJA Tiap BIRDEPT ===========================================
 
