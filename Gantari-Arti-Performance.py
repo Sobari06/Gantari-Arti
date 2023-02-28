@@ -255,9 +255,9 @@ def create_chart(df, divisi):
     return fig
 
 # Create Streamlit app
-st.title('Grafik Time Series Performa Kabinet Gantari Arti')
+st.title('Grafik Time Series Performa Biro dan Departemen')
 st.markdown('''
-            Grafik time series interaktif untuk menampilkan nilai performa Kabinet Gantari Arti.
+            Grafik time series interaktif untuk menampilkan nilai Biro dan Departemen.
             ''')
 
 # Show dropdown to select division
