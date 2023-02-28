@@ -306,10 +306,10 @@ df = CSV_Link_1 = pd.read_csv(f'https://docs.google.com/spreadsheets/d/{sheet_id
 print(dfC)
 
 # Tambahkan sidebar
-menu = ["BPH dengan Performa Kerja Terbaik", "BirDept dengan Performa Kerja Terbaik","Pimpinan dengan Performa Kerja Terbaik","TOP 11 Staffs with Best Work Performance of The Month"]
-selected_menu = st.sidebar.selectbox("Menu", menu) 
+menu = ["BPH sebagai SC", "Biro dan Departemen","Pimpinan","TOP 11 Staff"]
+selected_menu = st.sidebar.selectbox("Best Performance", menu) 
 # Jika menu "BPH dengan Performa Kerja Terbaik" dipilih
-if selected_menu == "BPH dengan Performa Kerja Terbaik":
+if selected_menu == "BPH sebagai SC":
 
     # Set judul halaman
     st.title("BPH dengan Performa Kerja Terbaik")
@@ -393,9 +393,9 @@ print(dfC)
 
 
 # Jika menu "BPH dengan Performa Kerja Terbaik" dipilih
-if selected_menu == "BirDept dengan Performa Kerja Terbaik":
+if selected_menu == "Biro dan Departemen":
 # Set judul halaman
-    st.title("BirDept dengan Performa Kerja Terbaik")
+    st.title("Biro dan Departemen")
 
 
     # Path folder foto
@@ -483,10 +483,10 @@ df = CSV_Link_3 = pd.read_csv(f'https://docs.google.com/spreadsheets/d/{sheet_id
 print(dfC)
 
 # Jika menu "BPH dengan Performa Kerja Terbaik" dipilih
-if selected_menu == "Pimpinan dengan Performa Kerja Terbaik":
+if selected_menu == "Pimpinan":
 
 # Set judul halaman
-    st.title("Pimpinan dengan Performa Kerja Terbaik")
+    st.title("Pimpinan")
 
 
 
@@ -583,9 +583,9 @@ sheet_id7 = '1UWMla9vOWPNH0cehuhmvYbmWzBWVzaAPgHr9gS4GZJg'
 df = CSV_Link_4 = pd.read_csv(f'https://docs.google.com/spreadsheets/d/{sheet_id7}/export?format=csv')      
 
 # Jika menu "BPH dengan Performa Kerja Terbaik" dipilih
-if selected_menu == "TOP 11 Staffs with Best Work Performance of The Month":
+if selected_menu == "TOP 11 Staff":
 # Set judul halaman
-    st.title("TOP 11 Staffs with Best Work Performance of The Month")
+    st.title("TOP 11 Staff")
 
 
 
