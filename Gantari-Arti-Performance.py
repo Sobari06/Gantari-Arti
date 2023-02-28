@@ -207,10 +207,10 @@ df_filtered = dfZ[dfZ['DATE_1'] == selected_month]
 if len(df_filtered) > 0:
     fig, (ax1, ax2) = plt.subplots(nrows=2, ncols=1, figsize=(8, 10))
     sns.boxplot(x='Biro dan Departemen', y='Performa', data=df_filtered, ax=ax1)
-    ax.set_title(f'Boxplot Performa Kerja Seluruh Biro dan Departemen ({selected_month})')
+    ax1.set_title(f'Boxplot Performa Kerja Seluruh Biro dan Departemen ({selected_month})')
     
     # Rotate x-labels for better visibility
-    plt.xticks(rotation=45, ha='right')
+    ax1.plt.xticks(rotation=45, ha='right')
     
      # Distribution plot
     sns.kdeplot(data=df_filtered, x='Performa', hue='Biro dan Departemen', multiple='stack', ax=ax2)
