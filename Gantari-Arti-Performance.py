@@ -191,9 +191,12 @@ print(dfZ)
 # Sort data by month column
 dfZ = dfZ.sort_values('DATE_1')
 
-# Sidebar for filters
-st.sidebar.header('Filter')
-selected_month = st.sidebar.selectbox('Select Month', dfZ['DATE_1'].unique())
+# # Sidebar for filters
+# st.sidebar.header('Filter')
+# selected_month = st.sidebar.selectbox('Select Month', dfZ['DATE_1'].unique())
+
+# Tampilkan dropdown untuk memilih bulan
+selected_month = st.selectbox("Pilih Bulan",dfZ['DATE_1'].unique())
 
 # Main content
 st.title('Performa Kerja Staff')
@@ -203,7 +206,7 @@ st.write(f'Month: {selected_month}')
 df_filtered = dfZ[dfZ['DATE_1'] == selected_month]
 if len(df_filtered) > 0:
     fig, ax = plt.subplots()
-    sns.boxplot(x='DIVISI_1', y='NILAI_1', data=df_filtered, ax=ax)
+    sns.boxplot(x='Biro dan Departemen', y='Performa', data=df_filtered, ax=ax)
     ax.set_title(f'Boxplot Performa Kerja Seluruh Divisi ({selected_month})')
     
     # Rotate x-labels for better visibility
