@@ -199,23 +199,23 @@ dfZ = dfZ.sort_values('DATE_1')
 selected_month = st.selectbox("Pilih Bulan",dfZ['DATE_1'].unique())
 
 # Main content
-st.title('Perbandingan Kinerja Antar Biro dan Departemen')
+st.title('Perbandingan Kinerja BPH dan Antar Biro/Departemen')
 st.write(f'Month: {selected_month}')
 
 # Create boxplot for all divisions
 df_filtered = dfZ[dfZ['DATE_1'] == selected_month]
 if len(df_filtered) > 0:
     fig, (ax1, ax2) = plt.subplots(nrows=2, ncols=1, figsize=(8, 10))
-    sns.boxplot(x='Biro dan Departemen', y='Performa', data=df_filtered, ax=ax1)
-    ax1.set_title(f'Boxplot Performa Kerja Seluruh Biro dan Departemen ({selected_month})')
+    sns.boxplot(x='BPH dan Biro/Departemen', y='Performa', data=df_filtered, ax=ax1)
+    ax1.set_title(f'Boxplot Performa Kerja BPH dan Seluruh Biro/Departemen ({selected_month})')
     
   
     # Rotate x-labels for better visibility
     ax1.set_xticklabels(ax1.get_xticklabels(), rotation=45, ha='right')
     
      # Distribution plot
-    sns.kdeplot(data=df_filtered, x='Performa', hue='Biro dan Departemen', multiple='stack', ax=ax2)
-    ax2.set_title(f'Sebaran Performa Kerja Seluruh Divisi ({selected_month})')
+    sns.kdeplot(data=df_filtered, x='Performa', hue='BPH dan Biro/Departemen', multiple='stack', ax=ax2)
+    ax2.set_title(f'Sebaran Performa Kerja BPH dan Seluruh Biro/Departemen ({selected_month})')
     ax2.legend(loc='upper right',title='Divisi')
     
     fig.tight_layout()
