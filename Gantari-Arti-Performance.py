@@ -209,8 +209,9 @@ if len(df_filtered) > 0:
     sns.boxplot(x='Biro dan Departemen', y='Performa', data=df_filtered, ax=ax1)
     ax1.set_title(f'Boxplot Performa Kerja Seluruh Biro dan Departemen ({selected_month})')
     
+  
     # Rotate x-labels for better visibility
-    ax1.plt.xticks(rotation=45, ha='right')
+    ax1.set_xticklabels(ax1.get_xticklabels(), rotation=45, ha='right')
     
      # Distribution plot
     sns.kdeplot(data=df_filtered, x='Performa', hue='Biro dan Departemen', multiple='stack', ax=ax2)
