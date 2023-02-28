@@ -218,6 +218,7 @@ if len(df_filtered) > 0:
     ax2.set_title(f'Sebaran Performa Kerja Seluruh Divisi ({selected_month})')
     ax2.legend(loc='upper right')
     
+    fig.tight_layout()
     st.pyplot(fig)
    
 
