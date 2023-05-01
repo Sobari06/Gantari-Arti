@@ -356,7 +356,7 @@ if selected_menu == "BPH sebagai SC":
 
 
     # Tampilkan dropdown untuk memilih bulan
-    selected_month = st.selectbox("Pilih Bulan",months)
+    selected_month = st.selectbox("Pilih Bulan",months, key="bulan_selector)
 
     # Filter data berdasarkan bulan yang dipilih
     filtered_df = df[df['Bulan'] == selected_month]
