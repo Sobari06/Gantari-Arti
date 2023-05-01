@@ -352,11 +352,11 @@ if selected_menu == "BPH sebagai SC":
 
     # Buat list bulan
     months = df['Bulan'].unique()
-    widget_id = f"selectbox_{time.time()}_{random.randint(0, 1000)}"
+    
 
 
     # Tampilkan dropdown untuk memilih bulan
-    selected_month = st.selectbox("Pilih Bulan",months, key=widget_id)
+    selected_month = st.selectbox("Pilih Bulan",months)
 
     # Filter data berdasarkan bulan yang dipilih
     filtered_df = df[df['Bulan'] == selected_month]
