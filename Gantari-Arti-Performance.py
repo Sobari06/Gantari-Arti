@@ -15,6 +15,19 @@ import matplotlib.pyplot as plt
 import base64
 import seaborn as sns
 
+
+# Mengatur konfigurasi tampilan Streamlit
+def set_page_config():
+        st.set_page_config(
+            page_title="Gantari Arti",
+            page_icon='LOGO EKSE1.png',
+            layout="wide",
+            initial_sidebar_state="expanded",
+        )
+
+# Memanggil fungsi set_page_config()
+set_page_config()
+
 #Mendefinisikan fungsi untuk menampilkan animasi Lottie
 def load_lottie_url(url: str):
     r = requests.get(url)
