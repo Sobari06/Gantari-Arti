@@ -242,7 +242,7 @@ if len(df_filtered) > 0:
 dfB['DATE_1'] = pd.to_datetime(dfB['DATE_1'], format='%Y-%m-%d')
 
 # Remove commas from numeric columns
-numeric_cols = dfB.columns[1:-1]
+numeric_cols = dfB.columns[1:12]
 dfB[numeric_cols] = dfB[numeric_cols].replace(',', '', regex=True).astype(float)
 
 # Compute trend
